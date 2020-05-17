@@ -1,0 +1,57 @@
+/*home*/
+
+.home{
+  background-image: url("/images/home_03.jpg");
+  height: 1000px;
+  width: 100%;
+  background-size:cover;
+  text-align:center;
+  position: absolute;
+  
+  h1{
+    font-family: 'Courgette', cursive;
+    font-size:100px;
+    margin-top:200px;
+  }
+}
+
+@mixin home_btn($color){
+  font-size: 25px;
+  line-height:40px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  width:250px;
+  background-color: $color;
+  border-radius:10px;
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  transition: .2s;
+  &:hover{
+    background-color: darken($color, 70%);
+    color:white;
+  }
+}
+
+.btn_signin{
+  @include home_btn(#e3e3e3);
+  margin-top:100px;
+}
+
+.btn_signup{
+  @include home_btn(#e3e3e3);
+  margin-top:50px;
+}
+
+/*signup*/
+
+.signup{
+  background-image: url("/images/home_03.jpg");
+  height: 1000px;
+  width: 100%;
+  background-size:cover;
+  text-align:center;
+  position: absolute;
+}
