@@ -16,7 +16,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
   mount_uploader :picture, PictureUploader
-  validates :coment, presence: true, length: {maximum: 100}
+  validates :coment, length: {maximum: 100}
   has_secure_password
   validates :password, length: { minimum: 6 }, allow_nil: true
   
