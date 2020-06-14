@@ -1,0 +1,16 @@
+<%= render 'shared/header' %>
+
+<div class="posts_wrapper">
+  <div class="top">
+    <p class="title">「<%= @post.title %>」</p>
+    <p><%= link_to(@post.user[:name], @post.user, class: "name") %></p>
+    <%= image_tag @post.user.picture.url, class: "trim-image-to-circle" %>
+  </div>
+  <%= image_tag @post.picture.url, class: "main_photo" %>
+  <div class="text_wrapper">
+    <i class="fas fa-thumbs-up text_icon favorite"></i>
+    <p>10</p>
+    <i class="far fa-comment-alt text_icon comment"></i>
+  </div>
+  
+</div>

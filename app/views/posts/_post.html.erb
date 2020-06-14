@@ -1,0 +1,15 @@
+
+<% @posts.each do |post| %>
+<li class="posts_wrapper">
+  <div class="top">
+    <p class="title">「<%= link_to(post.title, post_path(post.id),class: "title_design") %>」</p>
+    <p><%= link_to(post.user[:name], post.user, class: "name") %></p>
+    <%= image_tag post.user.picture.url, class: "trim-image-to-circle" %>
+  </div>
+  <%= image_tag post.picture.url, class: "main_photo" %>
+  <div class="timestamp">
+    Posted <%= time_ago_in_words(post.created_at) %> ago.
+  </div>
+</li>
+<% end %>
+

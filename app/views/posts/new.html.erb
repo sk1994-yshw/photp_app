@@ -1,0 +1,29 @@
+<%= render 'shared/header' %>
+
+
+<div class="posts_new">
+  <h1>NEW POST</h1>
+
+  <div class="#">
+      <div class="form_wrapper">
+        <%= form_with(model: @post, local: true) do |f| %>
+          <%= render 'shared/error_messages' %>
+    
+          <%= f.label :title %>
+          <%= f.text_field :title, class: "form_parts" %>
+    
+          <%= f.label :content %>
+          <%= f.text_field :content, class: "form_parts" %>
+          
+          
+          <%= f.file_field :picture %>
+  
+          
+          <%= f.submit "Create new post", class: "form_parts create_btn" %>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,33 @@
+<%= render 'shared/header' %>
+
+
+<div class="posts_new">
+  <h1>UPDATE PROFILE</h1>
+
+  <div class="#">
+      <div class="form_wrapper">
+        <%= form_with(model: @user, local: true) do |f| %>
+        <%= render 'shared/error_messages' %>
+  
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form_parts" %>
+  
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form_parts" %>
+        
+        <%= f.label :coment %>
+        <%= f.text_area :coment, rows:"2", class: "form_parts coment" %>
+  
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form_parts" %>
+  
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation, class: "form_parts" %>
+        
+        <%= f.file_field :picture %>
+  
+        <%= f.submit "UPDATE MY PROFILE", class: "form_parts create_btn" %>
+      <% end %>
+      </div>
+  </div>
+</div>

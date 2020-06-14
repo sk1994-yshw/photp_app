@@ -1,0 +1,14 @@
+<div class="users_index_individial_wrapper">
+  <%= image_tag user.picture.url, class: "trim-image-to-circle" %>
+  <div class="profile_text_wrapper">
+    <div class="name_wrapper">
+      <%= link_to(user.name, user, class: "user_name") %>
+    </div>
+    <div class="user_information">
+      <div class="n_post">投稿：<%= user.posts.count %>件</div>
+      <div class="n_follow">フォロー：<%= user.following.count %>人</div>
+      <div class="n_followed">フォロワー：<%= user.followers.count %>人</div>
+    </div>
+    <div class="user_profile_message">25歳/大阪/絶賛プログラミング勉強中</div>
+  </div>
+</div>

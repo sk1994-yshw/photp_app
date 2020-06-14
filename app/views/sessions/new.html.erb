@@ -1,0 +1,22 @@
+<% provide(:title, "Log in") %>
+
+<div class="login">
+
+  <h1>LOG IN</h1>
+  
+  <div class="#">
+    <div class="form_wrapper">
+      <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+  
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form_parts' %>
+  
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form_parts' %>
+  
+        <%= f.submit "Log in", class: "form_parts create_btn" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

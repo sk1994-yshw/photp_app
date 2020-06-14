@@ -1,0 +1,22 @@
+<div class="profile_wrapper">
+  
+  <%= image_tag @user.picture.url, class: "trim-image-to-circle" %>
+  
+  
+  
+  <div class="profile_text_wrapper">
+    <div class="name_wrapper">
+      <div class="user_name"><%= @user.name %></div>
+      <%= link_to(edit_user_path, class: "setting_icon") do %>
+        <i class="fas fa-cog"></i>
+      <% end %>
+    </div>
+    <div class="user_information">
+      <div class="n_post">投稿：<%= @user.posts.count %>件</div>
+      <div class="n_follow">フォロー：<%= @user.following.count %>人</div>
+      <div class="n_followed">フォロワー：<%= @user.followers.count %>人</div>
+    </div>
+    <div class="user_profile_message"><%= @user.coment %></div>
+    <div><%= render "follow" %></div>
+  </div>
+</div>

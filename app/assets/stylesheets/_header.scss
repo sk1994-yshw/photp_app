@@ -1,0 +1,57 @@
+@import "variables";
+
+.header{
+  list-style: none;
+  background-color: $dark_color;
+  color: white;
+  width: 100%;
+  display: block;
+  height: 4rem;
+  line-height: 4rem;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0px;
+    
+    li{
+      display: inline;
+      float: right;
+      margin: 0rem 3rem;
+      font-size: 1.5rem;
+      
+       .header_text{
+        color: white;
+        text-decoration: none;
+        }
+      
+      &.header_logo{
+        float: left;
+      }
+    }  
+  
+}
+
+
+
+.footer{
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  display: block;
+  height: 5rem;
+  position: fixed;
+  bottom: 0px;
+    
+    .btn_new_post{
+      @include home_btn(#e3e3e3);
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 3rem;
+      border-radius: 1.5rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      
+    } 
+  
+}
