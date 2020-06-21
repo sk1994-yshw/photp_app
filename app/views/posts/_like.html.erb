@@ -1,9 +1,0 @@
-<% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-  <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}, class: "icon") do %>
-    <i class="fas fa-thumbs-up text_icon favorite "></i>
-  <% end %>
-<% else %>
-  <%= link_to("/likes/#{@post.id}/create", {method: "post"}, class: "icon") do %>
-    <i class="fas fa-thumbs-up text_icon unfavorite"></i>
-  <% end %>
-<% end %>
