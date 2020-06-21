@@ -1,0 +1,7 @@
+<% @messages.each do |message| %>
+  <div class="messages">
+    <%= image_tag message.post.user.picture.url, class: "trim-image-to-circle" %>
+    <div class="name"><%= message.post.user.name %></div>
+    <div class="comment"><%= message.comment %></div>
+  </div>
+<% end %>

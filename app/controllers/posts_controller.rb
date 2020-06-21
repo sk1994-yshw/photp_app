@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @messages = @post.messages.all
   end
   
   def create

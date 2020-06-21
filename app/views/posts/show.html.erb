@@ -1,6 +1,6 @@
 <%= render 'shared/header' %>
 
-<div class="posts_wrapper">
+<div class="posts_show_wrapper">
   <div class="top">
     <p class="title">「<%= @post.title %>」</p>
     <p><%= link_to(@post.user[:name], @post.user, class: "name") %></p>
@@ -8,9 +8,24 @@
   </div>
   <%= image_tag @post.picture.url, class: "main_photo" %>
   <div class="text_wrapper">
-    <i class="fas fa-thumbs-up text_icon favorite"></i>
-    <p>10</p>
-    <i class="far fa-comment-alt text_icon comment"></i>
+    <%= render "like" %>
+    <p><%= @post.likes.count %></p>
+    <%= link_to(new_post_message_path(@post.id), class: "icon") do %>
+      <i class="far fa-comment-alt text_icon comment"></i>
+    <% end %>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(@post.created_at) %> ago.
+    </span>
   </div>
+  <div class="content"><%= @post.content %></div>
+  <div class="message_wrapper">
+    <p>MESSAGE</p>
+    <%= render "messages" %>
+      
+  </div>
+    
+    
+  </div>
+  
   
 </div>
