@@ -116,7 +116,7 @@ body{
   }
 }
 
-/*------------------------------show------------------------------*/
+/*------------------------------users/show------------------------------*/
 
 .profile_wrapper{
   display: flex;
@@ -232,11 +232,25 @@ body{
     width: 30rem;
     object-fit: cover;
     border: 1px solid;
-    
+    border-color: $dark_color;
   }
 }
 
+.hide{
+  display: none;
+}
 
+.posts_btn, .favorite_btn{
+  cursor: pointer;
+}
+
+/*------------------------------users_edit------------------------------*/
+.delete_btn{
+  @include home_btn(#e3e3e3);
+         width: 15rem;
+         margin-top: 3rem;
+         text-align: center;
+}
 
 /*------------------------------users_index------------------------------*/
 
@@ -334,8 +348,7 @@ ol{
       width:  3rem;       /* ※縦横を同値に */
       height: 3rem;       /* ※縦横を同値に */
       border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-      background-position: center center;  /* 横長画像の左上を基準に表示 */
-      background-size: cover;
+      object-fit: cover;
       border: 1px solid;
       float: right;
       margin-top: 1rem;
@@ -478,6 +491,15 @@ h1{
       }
     }
   }
+}
+
+/*------------------------------logout------------------------------*/
+.logout_btn{
+  @include home_btn(#e3e3e3);
+  width: 10rem;
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
 }
 
 /*------------------------------posts/show------------------------------*/

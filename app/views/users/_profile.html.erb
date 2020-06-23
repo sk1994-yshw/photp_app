@@ -7,8 +7,10 @@
   <div class="profile_text_wrapper">
     <div class="name_wrapper">
       <div class="user_name"><%= @user.name %></div>
-      <%= link_to(edit_user_path, class: "setting_icon") do %>
-        <i class="fas fa-cog"></i>
+      <% if @user == current_user %>
+        <%= link_to(edit_user_path, class: "setting_icon") do %>
+          <i class="fas fa-cog"></i>
+        <% end %>
       <% end %>
     </div>
     <div class="user_information">
@@ -18,5 +20,8 @@
     </div>
     <div class="user_profile_message"><%= @user.coment %></div>
     <div><%= render "follow" %></div>
+    <% if @user == current_user %>
+      <%= link_to "LOGOUT", logout_path, method: :delete , class: "logout_btn" %>
+    <% end %>  
   </div>
 </div>

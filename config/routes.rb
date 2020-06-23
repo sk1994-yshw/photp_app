@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/signup" =>  "users#new"
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
+  post   '/logout',   to: 'sessions#destroy'
   
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"

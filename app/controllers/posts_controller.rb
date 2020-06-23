@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = current_user
-    @posts = Post.all
+    @posts = current_user.feed
   end
   
   def new

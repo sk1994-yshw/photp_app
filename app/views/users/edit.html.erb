@@ -3,10 +3,8 @@
 
 <div class="posts_new">
   <h1>UPDATE PROFILE</h1>
-
-  <div class="#">
-      <div class="form_wrapper">
-        <%= form_with(model: @user, local: true) do |f| %>
+    <div class="form_wrapper">
+      <%= form_with(model: @user, local: true) do |f| %>
         <%= render 'shared/error_messages' %>
   
         <%= f.label :name %>
@@ -28,6 +26,6 @@
   
         <%= f.submit "UPDATE MY PROFILE", class: "form_parts create_btn" %>
       <% end %>
-      </div>
-  </div>
+    </div>
+    <%= link_to "DELETE MY ACOUNT", user_path(@user.id), method: :delete, data: { confirm: "You sure?" }, class: "delete_btn" %>
 </div>
